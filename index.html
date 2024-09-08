@@ -10,6 +10,7 @@
             background-color: #f0f0f0;
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
 
         .container {
@@ -19,19 +20,28 @@
 
         .search-bar {
             margin: 20px 0;
+            position: relative;
         }
 
         .search-bar input {
             width: 100%;
             padding: 10px;
             font-size: 16px;
-            border-radius: 5px;
+            border-radius: 25px;
             border: 1px solid #ddd;
+            outline: none;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .search-bar input:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
         }
 
         .player-list {
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
         }
 
         .player-card {
@@ -42,19 +52,26 @@
             margin: 10px;
             text-align: center;
             padding: 15px;
-            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
+            transform: scale(1);
         }
 
         .player-card:hover {
-            background-color: #f9f9f9;
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
         }
 
         .player-card img {
             border-radius: 50%;
             width: 64px;
             height: 64px;
+            transition: opacity 0.3s;
+        }
+
+        .player-card img:hover {
+            opacity: 0.8;
         }
 
         .player-name {
@@ -68,6 +85,11 @@
             padding: 20px;
             font-size: 14px;
             color: #666;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #fff;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
         }
     </style>
 </head>
