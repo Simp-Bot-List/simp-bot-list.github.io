@@ -61,23 +61,24 @@
         .info-popup {
             display: none;
             position: absolute;
-            top: 40px; /* Position adjusted */
-            right: 0px; /* Aligned with the info icon */
+            top: 45px; /* Adjusted to be closer to the icon */
+            right: 0; /* Aligned with the info icon */
             background-color: white;
             border: 1px solid #ddd;
             border-radius: 5px;
-            padding: 10px;
+            padding: 15px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 250px;
             font-size: 14px;
             z-index: 10; /* Ensure the popup appears above other content */
+            line-height: 1.5; /* Improved readability for multi-line text */
         }
 
         .info-popup::after {
             content: '';
             position: absolute;
-            top: 10px; /* Adjusted to align with the popup */
-            left: -10px; /* Position the arrow to the left of the popup */
+            top: 15px; /* Align with the top of the popup */
+            left: -15px; /* Position the arrow to the left of the popup */
             border-width: 10px;
             border-style: solid;
             border-color: transparent white transparent transparent;
