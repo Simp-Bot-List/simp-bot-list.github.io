@@ -16,6 +16,21 @@
         .container {
             width: 80%;
             margin: auto;
+            position: relative;
+        }
+
+        .discord-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .discord-icon:hover {
+            opacity: 0.8;
         }
 
         .search-bar {
@@ -96,6 +111,7 @@
 <body>
 
 <div class="container">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Discord_logo_and_wordmark.svg" alt="Discord" class="discord-icon" onclick="window.open('https://discord.gg/YOUR_SERVER_INVITE', '_blank')">
     <h1>SimpCraft-Bot-List</h1>
     <div class="search-bar">
         <input type="text" id="searchInput" placeholder="Search for player names...">
