@@ -51,8 +51,8 @@
 
         .player-card img {
             border-radius: 50%;
-            width: 60px;
-            height: 60px;
+            width: 64px;
+            height: 64px;
             transition: transform 0.3s ease;
         }
 
@@ -94,8 +94,8 @@
             playerCard.classList.add('player-card');
 
             const playerImg = document.createElement('img');
-            // Verwende mc--heads.net, um die Köpfe der Spieler anzuzeigen
-            playerImg.src = `https://mc-heads.net/avatar/${player}?size=64`;
+            // Verwende mc-heads.net, um die Köpfe der Spieler anzuzeigen
+            playerImg.src = `https://mc-heads.net/avatar/${player}`;
             playerImg.alt = `${player} Skin`;
 
             const playerName = document.createElement('div');
