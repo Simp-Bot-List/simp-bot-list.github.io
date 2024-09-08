@@ -34,6 +34,16 @@
             transition: opacity 0.3s;
         }
 
+        .social-icons img.home-icon {
+            width: 30px;
+            height: 30px;
+        }
+
+        .social-icons img:not(.home-icon) {
+            width: 40px;
+            height: 40px;
+        }
+
         .social-icons img:hover {
             opacity: 0.8;
         }
@@ -117,7 +127,7 @@
 
 <div class="container">
     <div class="social-icons">
-        <img src="https://icon-library.com/images/homepage-icon/homepage-icon-2.jpg" alt="Home" onclick="window.open('https://YOUR_WEBSITE_URL', '_blank')">
+        <img src="https://icon-library.com/images/homepage-icon/homepage-icon-2.jpg" alt="Home" class="home-icon" onclick="window.open('https://YOUR_WEBSITE_URL', '_blank')">
         <img src="https://pngimg.com/uploads/github/github_PNG40.png" alt="GitHub" onclick="window.open('https://github.com/YOUR_GITHUB_PAGE', '_blank')">
         <img src="https://toppng.com/public/uploads/preview/discord-logo-01-discord-logo-11562849833clsolz2mbc.png" alt="Discord" onclick="window.open('https://discord.gg/YOUR_SERVER_INVITE', '_blank')">
     </div>
