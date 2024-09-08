@@ -19,17 +19,22 @@
             position: relative;
         }
 
-        .discord-icon {
+        .social-icons {
             position: absolute;
-            top: 10px; /* Erhöht von 20px auf 10px */
+            top: 10px;
             right: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .social-icons img {
             width: 40px;
             height: 40px;
             cursor: pointer;
             transition: opacity 0.3s;
         }
 
-        .discord-icon:hover {
+        .social-icons img:hover {
             opacity: 0.8;
         }
 
@@ -111,7 +116,10 @@
 <body>
 
 <div class="container">
-    <img src="https://toppng.com/public/uploads/preview/discord-logo-01-discord-logo-11562849833clsolz2mbc.png" alt="Discord" class="discord-icon" onclick="window.open('https://discord.gg/YOUR_SERVER_INVITE', '_blank')">
+    <div class="social-icons">
+        <img src="https://toppng.com/public/uploads/preview/discord-logo-01-discord-logo-11562849833clsolz2mbc.png" alt="Discord" onclick="window.open('https://discord.gg/YOUR_SERVER_INVITE', '_blank')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Github_logo_2013.svg/1024px-Github_logo_2013.svg.png" alt="GitHub" onclick="window.open('https://github.com/YOUR_GITHUB_PAGE', '_blank')">
+    </div>
     <h1>SimpCraft-Bot-List</h1>
     <div class="search-bar">
         <input type="text" id="searchInput" placeholder="Search for player names...">
