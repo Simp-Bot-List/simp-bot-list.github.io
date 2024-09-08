@@ -22,8 +22,9 @@
         .social-icons {
             position: absolute;
             top: 10px;
-            right: 70px;
+            right: 10px;
             display: flex;
+            align-items: center;
             gap: 10px;
         }
 
@@ -47,9 +48,6 @@
         }
 
         .info-icon {
-            position: fixed;
-            top: 10px;
-            right: 10px;
             width: 30px;
             height: 30px;
             cursor: pointer;
@@ -62,7 +60,7 @@
 
         .info-popup {
             display: none;
-            position: fixed;
+            position: absolute;
             top: 50px;
             right: 10px;
             background-color: white;
@@ -166,8 +164,8 @@
         <img src="https://icon-library.com/images/homepage-icon/homepage-icon-2.jpg" alt="Home" class="home-icon" onclick="window.open('https://YOUR_WEBSITE_URL', '_blank')">
         <img src="https://pngimg.com/uploads/github/github_PNG40.png" alt="GitHub" onclick="window.open('https://github.com/YOUR_GITHUB_PAGE', '_blank')">
         <img src="https://toppng.com/public/uploads/preview/discord-logo-01-discord-logo-11562849833clsolz2mbc.png" alt="Discord" onclick="window.open('https://discord.gg/YOUR_SERVER_INVITE', '_blank')">
+        <img src="https://openclipart.org/image/2400px/svg_to_png/274087/1488160614.png" alt="Info" class="info-icon" onclick="togglePopup()">
     </div>
-    <img src="https://openclipart.org/image/2400px/svg_to_png/274087/1488160614.png" alt="Info" class="info-icon" onclick="togglePopup()">
     <h1>SimpCraft-Bot-List</h1>
     <div class="search-bar">
         <input type="text" id="searchInput" placeholder="Search for player names...">
