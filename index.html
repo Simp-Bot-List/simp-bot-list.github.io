@@ -15,6 +15,18 @@
             margin: auto;
         }
 
+        .search-bar {
+            margin: 20px 0;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
         .player-list {
             display: flex;
             flex-wrap: wrap;
@@ -29,6 +41,12 @@
             text-align: center;
             padding: 15px;
             box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .player-card:hover {
+            background-color: #f9f9f9;
         }
 
         .player-card img {
@@ -48,30 +66,31 @@
 
 <div class="container">
     <h1>Minecraft Spielernamen und Köpfe</h1>
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Suche nach Spielernamen...">
+    </div>
     <div class="player-list" id="playerList">
         <!-- Spieler Karten werden hier eingefügt -->
     </div>
 </div>
 
 <script>
-    // Korrekte Liste der Spielernamen
     const playerNames = [
         'amogus_bot', 'N00bBot0', 'N00bBot1', 'N00bBot2', 'N00bBot3', 'N00bBot4', 'N00bBot5', 'N00bBot6', 'N00bBot7', 
-        'N00bBot8', 'N00bBot9', 'N00bBot10', 'N00bBot11', 'N00bBot13', 'N00bBot64', 'N00bBot66', 'N00bBot69', 'N00bBot79', 
-        'N00bBot80', 'N00bBot100', 'N00bBot137', 'N00bBot174', 'N00bBot201', 'N00bBot208', 'N00bBot226', 'N00bBot25565', 
-        'N00bBot300', 'N00bBot413', 'N00bBot418', 'N00bBot420', 'N00bBot428', 'N00bBot433', 'N00bBot501', 'N00bBot511', 
+        'N00bBot8', 'N00bBot9', 'N00bBot10', 'N00bBot11', 'N00bBot13', 'N00bBot64', 'N00bBot80', 'N00bBot100', 'N00bBot201', 
+        'N00bBot208', 'N00bBot226', 'N00bBot25565', 'N00bBot300', 'N00bBot418', 'N00bBot420', 'N00bBot501', 'N00bBot511', 
         'N00bBot9001', 'N00bBot_adm', 'OcelotBot', 'PearlButler', 'Supergufa888', 'UnrealCrafter_'
     ];
 
     const playerListContainer = document.getElementById('playerList');
+    const searchInput = document.getElementById('searchInput');
 
-    // Spieler-Kopf-Bilder von mc-heads.net laden
-    playerNames.forEach(player => {
+    function createPlayerCard(player) {
         const playerCard = document.createElement('div');
         playerCard.classList.add('player-card');
+        playerCard.onclick = () => window.open(`https://mc-heads.net/player/${player}`, '_blank');
 
         const playerImg = document.createElement('img');
-        // Verwende den Avatar-Link von mc-heads.net, um die Köpfe der Spieler anzuzeigen
         playerImg.src = `https://mc-heads.net/avatar/${player}/64`;
         playerImg.alt = `${player} Skin`;
 
@@ -81,8 +100,26 @@
 
         playerCard.appendChild(playerImg);
         playerCard.appendChild(playerName);
-        playerListContainer.appendChild(playerCard);
-    });
+        return playerCard;
+    }
+
+    function renderPlayerList(players) {
+        playerListContainer.innerHTML = '';
+        players.forEach(player => {
+            playerListContainer.appendChild(createPlayerCard(player));
+        });
+    }
+
+    function filterPlayers() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const filteredPlayers = playerNames.filter(player => player.toLowerCase().includes(searchTerm));
+        renderPlayerList(filteredPlayers);
+    }
+
+    searchInput.addEventListener('input', filterPlayers);
+
+    // Initiales Rendering der Spieler-Karten
+    renderPlayerList(playerNames);
 </script>
 
 </body>
