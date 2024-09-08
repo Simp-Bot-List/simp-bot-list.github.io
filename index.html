@@ -61,8 +61,8 @@
         .info-popup {
             display: none;
             position: absolute;
-            top: 45px; /* Adjusted to be next to the icon */
-            right: 50px; /* Adjusted for better placement */
+            top: 40px; /* Position adjusted */
+            right: 0px; /* Aligned with the info icon */
             background-color: white;
             border: 1px solid #ddd;
             border-radius: 5px;
@@ -76,12 +76,11 @@
         .info-popup::after {
             content: '';
             position: absolute;
-            top: 0;
-            right: 100%;
-            margin-right: 10px;
+            top: 10px; /* Adjusted to align with the popup */
+            left: -10px; /* Position the arrow to the left of the popup */
             border-width: 10px;
             border-style: solid;
-            border-color: transparent #fff transparent transparent;
+            border-color: transparent white transparent transparent;
         }
 
         .search-bar {
