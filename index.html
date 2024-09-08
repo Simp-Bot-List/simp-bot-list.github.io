@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Namen und Köpfe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+
+        .player-list {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .player-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 150px;
+            margin: 10px;
+            text-align: center;
+            padding: 15px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        .player-card img {
+            border-radius: 50%;
+            width: 64px;
+            height: 64px;
+        }
+
+        .player-name {
+            margin-top: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Minecraft Spielernamen und Köpfe</h1>
+    <div class="player-list" id="playerList">
+        <!-- Spieler Karten werden hier eingefügt -->
+    </div>
+</div>
+
+<script>
+    // Liste der Spielernamen
+    const playerNames = [
+        'amogus_bot', 'N00bBot0', 'N00bBot10', 'N00bBot100', 'N00bBot11', 'N00bBot2', 
+        'N00bBot137', 'N00bBot201', 'N00bBot208', 'N00bBot226', 'N00bBot25565',
+        'N00bBot300', 'N00bBot413', 'N00bBot501', 'OcelotBot', 'PearlButler', 'Supergufa888',
+        'UnrealCrafter'
+    ];
+
+    const playerListContainer = document.getElementById('playerList');
+
+    // Spieler-Kopf-Bilder von der Minecraft-API laden
+    playerNames.forEach(player => {
+        const playerCard = document.createElement('div');
+        playerCard.classList.add('player-card');
+
+        const playerImg = document.createElement('img');
+        // Verwende den Avatar-Link von Minotar.net, um die Köpfe der Spieler anzuzeigen
+        playerImg.src = `https://minotar.net/avatar/${player}/64`;
+        playerImg.alt = `${player} Skin`;
+
+        const playerName = document.createElement('div');
+        playerName.classList.add('player-name');
+        playerName.textContent = player;
+
+        playerCard.appendChild(playerImg);
+        playerCard.appendChild(playerName);
+        playerListContainer.appendChild(playerCard);
+    });
+</script>
+
+</body>
+</html>
