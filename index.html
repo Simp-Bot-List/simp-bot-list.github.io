@@ -46,6 +46,44 @@
             opacity: 0.8;
         }
 
+        .info-icon {
+            position: absolute;
+            top: 10px;
+            right: 80px;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .info-icon:hover {
+            opacity: 0.8;
+        }
+
+        .info-popup {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 10px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            font-size: 14px;
+        }
+
+        .info-popup::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            border-width: 0 10px 10px 10px;
+            border-style: solid;
+            border-color: transparent transparent white transparent;
+        }
+
         .search-bar {
             margin: 20px 0;
             position: relative;
@@ -128,6 +166,7 @@
         <img src="https://icon-library.com/images/homepage-icon/homepage-icon-2.jpg" alt="Home" class="home-icon" onclick="window.open('https://YOUR_WEBSITE_URL', '_blank')">
         <img src="https://pngimg.com/uploads/github/github_PNG40.png" alt="GitHub" onclick="window.open('https://github.com/YOUR_GITHUB_PAGE', '_blank')">
         <img src="https://toppng.com/public/uploads/preview/discord-logo-01-discord-logo-11562849833clsolz2mbc.png" alt="Discord" onclick="window.open('https://discord.gg/YOUR_SERVER_INVITE', '_blank')">
+        <img src="https://www.shareicon.net/data/128x128/2016/09/03/821262_info_512x512.png" alt="Info" class="info-icon" onclick="togglePopup()">
     </div>
     <h1>SimpCraft-Bot-List</h1>
     <div class="search-bar">
@@ -142,6 +181,10 @@
     Coded by Supergufa888!
 </div>
 
+<div class="info-popup" id="infoPopup">
+    Send more SimpCraft bot accounts to the Discord so I can add them.
+</div>
+
 <script>
     const playerNames = [
         'amogus_bot', 'N00bBot0', 'N00bBot1', 'N00bBot2', 'N00bBot3', 'N00bBot4', 'N00bBot5', 'N00bBot6', 'N00bBot7', 
@@ -152,6 +195,7 @@
 
     const playerListContainer = document.getElementById('playerList');
     const searchInput = document.getElementById('searchInput');
+    const infoPopup = document.getElementById('infoPopup');
 
     function createPlayerCard(player) {
         const playerCard = document.createElement('div');
@@ -182,6 +226,14 @@
         const searchTerm = searchInput.value.toLowerCase();
         const filteredPlayers = playerNames.filter(player => player.toLowerCase().includes(searchTerm));
         renderPlayerList(filteredPlayers);
+    }
+
+    function togglePopup() {
+        if (infoPopup.style.display === 'block') {
+            infoPopup.style.display = 'none';
+        } else {
+            infoPopup.style.display = 'block';
+        }
     }
 
     searchInput.addEventListener('input', filterPlayers);
