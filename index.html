@@ -44,6 +44,10 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .player-card:hover {
@@ -64,13 +68,12 @@
 
         .player-name {
             margin-top: 10px;
-            font-size: 14px;
+            font-size: 12px; /* Kleinere Schriftgröße für lange Namen */
             font-weight: bold;
             color: #343a40;
-            text-overflow: ellipsis;
-            overflow: hidden;
-            white-space: nowrap;
-            max-width: 100%;
+            text-align: center;
+            line-height: 1.2;
+            word-break: break-word;
         }
     </style>
 </head>
